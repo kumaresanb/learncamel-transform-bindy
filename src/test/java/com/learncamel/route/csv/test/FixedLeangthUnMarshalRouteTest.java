@@ -1,5 +1,6 @@
 package com.learncamel.route.csv.test;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -33,6 +34,10 @@ public class FixedLeangthUnMarshalRouteTest extends CamelTestSupport {
 		assertEquals(localDate2.getYear(), liEmployeeWithFixedLeangths.get(1).getJoiningDate().getYear());
 		assertEquals(31, liEmployeeWithFixedLeangths.get(0).getAge());
 		assertEquals(34, liEmployeeWithFixedLeangths.get(1).getAge());
+		BigDecimal expectedKumarSal=new BigDecimal("90000.00");
+		BigDecimal expectedKamaSal=new BigDecimal("80000.00");
+		assertEquals(expectedKumarSal, liEmployeeWithFixedLeangths.get(0).getSalary());
+		assertEquals(expectedKamaSal, liEmployeeWithFixedLeangths.get(1).getSalary());
 		
 	}
 

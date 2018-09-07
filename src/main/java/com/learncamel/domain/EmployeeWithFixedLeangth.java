@@ -1,5 +1,6 @@
 package com.learncamel.domain;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import org.apache.camel.dataformat.bindy.annotation.DataField;
@@ -22,11 +23,13 @@ public class EmployeeWithFixedLeangth {
 	private LocalDate joiningDate;
 	@DataField(pos = 5, delimiter = "^")
 	private int age;
-
+	@DataField(pos = 6, length = 8 ,precision=2)
+	private BigDecimal salary;
 	@Override
 	public String toString() {
 		return "EmployeeWithFixedLeangth [id=" + id + ", name=" + name + ", role=" + role + ", joiningDate="
-				+ joiningDate + ", age=" + age + "]";
+				+ joiningDate + ", age=" + age + ", salary=" + salary + "]";
 	}
+	
 
 }
